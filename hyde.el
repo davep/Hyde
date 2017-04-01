@@ -516,7 +516,7 @@ user"
     (hyde/hyde-mode jekyll-root)))
 
 (defun hyde/ask-for-jekyll-root ()
-  (or (vc-find-root (buffer-file-name) "_config.yml")
+  (or (vc-find-root (or (buffer-file-name) "") "_config.yml")
       (read-directory-name "Jekyll root: ")))
 
 (provide 'hyde)
